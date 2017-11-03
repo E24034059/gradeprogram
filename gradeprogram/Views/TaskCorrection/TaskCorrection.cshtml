@@ -1,0 +1,43 @@
+﻿@model gradeprogram.ViewModels.TaskCorrectionViewModel
+
+@{
+    ViewBag.Title = "TaskCorrection";
+}
+
+<h2>TaskCorrection</h2>
+
+<div>
+    <hr />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group">
+
+                    <p>
+                        @Html.Label("課程"):
+                        @Html.DropDownListFor(x => x.PropertyParameter.CourseName, Model.ClassData, "請選擇課程", new { id = "Course", name = "Course_Name" })
+                    </p>
+
+                </div>
+                <div class="btn-group">
+                    <p>
+                        類型選擇：<select id="assignmentType" name="assignmentType"><option>------</option></select>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <p>
+                        作業選擇：<select id="HWNum" name="HWNum"><option>------</option></select>
+                    </p>
+                </div>
+                <div>
+                  <button  id="submit" onclick ="return CorrectSelectTask()">
+                    correct
+                  </button>
+                </div>
+            </div>
+        </div>
+   </div>        
+</div>
+
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/TaskCorrectJS")

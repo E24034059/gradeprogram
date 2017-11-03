@@ -1,0 +1,50 @@
+﻿@model gradeprogram.ViewModels.CreateQuestionViewModel
+
+@{
+    ViewBag.Title = "CreateQuestion";
+}
+
+
+<h2>CreatAnswer</h2>
+
+<hr />
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">	   
+            <p>
+                @Html.Label("課程"):
+                @Html.DropDownListFor(x => x.PropertyParameter.CourseName, Model.ClassData, "請選擇課程", new { id = "Course", name = "Course_Name" })
+            </p>
+            <p>
+                @Html.Label("測試輸入與答案分割符號"):
+                @Html.Label(Model.sparatestring)
+                
+           </p>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="questionTextarea">題目</label>
+                    <textarea class="form-control" id="question" rows="6" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Textarea">輸出範例</label>
+                    <textarea class="form-control" id="outputformat" rows="6"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea">測試資料</label>
+                    <textarea class="form-control" id="testinput" rows="6"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea">答案</label>
+                    <textarea class="form-control" id="answer" rows="6"></textarea>
+                </div>
+				<button type="submit"  id="submit" onclick ="return CreateQuestion()">
+					Submit
+				</button>
+			</form>
+	</div>
+    </div>
+   </div>
+
+
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/CreateQuestionJS")
