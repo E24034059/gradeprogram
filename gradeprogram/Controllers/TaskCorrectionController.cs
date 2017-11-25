@@ -52,11 +52,11 @@ namespace gradeprogram.Controllers
             {
                 if (assignmentType == "HW_Exam")
                 {
-                    HWdatas = this.TaskCorrectionService.GetHWNum(Course_ID, tagName, null);
+                    HWdatas = this.TaskCorrectionService.GetHWNum(int.Parse(Course_ID), tagName, null);
                 }
                 else if (assignmentType == "Exercise")
                 {
-                    HWdatas = this.TaskCorrectionService.GetExerciseData(Course_ID, tagName, null);
+                    HWdatas = this.TaskCorrectionService.GetExerciseData(int.Parse(Course_ID), tagName, null);
                 }
             }
             return Content(HWdatas);
@@ -70,7 +70,7 @@ namespace gradeprogram.Controllers
             string Typedatas = string.Empty;
             if (!string.IsNullOrWhiteSpace(Course_ID))
             {
-                Typedatas = this.TaskCorrectionService.GetTypes(Course_ID, tagName, null);
+                Typedatas = this.TaskCorrectionService.GetTypes(int.Parse(Course_ID), tagName, null);
             }
             return Content(Typedatas);
         }
@@ -78,7 +78,7 @@ namespace gradeprogram.Controllers
         [HttpPost]
         public bool CheckIsAnswerExist(string Course_ID, string HWNum)
         {
-           return this.TaskCorrectionService.IsAnswerExists(Course_ID, HWNum);
+           return this.TaskCorrectionService.IsAnswerExists(int.Parse(Course_ID), HWNum);
         }
         
 
@@ -86,7 +86,7 @@ namespace gradeprogram.Controllers
         public ActionResult CorrectTask(string Course_ID,string assignmentType,string HWNum)
         {
           
-            this.TaskCorrectionService.CorrectTask( Course_ID, assignmentType, HWNum);
+            this.TaskCorrectionService.CorrectTask( int.Parse(Course_ID), assignmentType, HWNum);
 
             return RedirectToAction("TaskCorrection");
         }

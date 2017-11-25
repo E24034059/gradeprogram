@@ -1,0 +1,3 @@
+Please input the length of the rectangle:20
+Please input the width of the rectangle:10
+The area of the rectangle is:200

@@ -1,0 +1,204 @@
+D:\專題\gradeprogram\gradeprogram\bin\ApplicationInsights.config
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\csc.exe
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\System.Collections.Immutable.dll
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\System.Reflection.Metadata.dll
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\vbc.exe
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\VBCSCompiler.exe
+D:\專題\gradeprogram\gradeprogram\bin\roslyn\VBCSCompiler.exe.config
+D:\專題\gradeprogram\gradeprogram\bin\gradeprogram.dll.config
+D:\專題\gradeprogram\gradeprogram\bin\gradeprogram.dll
+D:\專題\gradeprogram\gradeprogram\bin\gradeprogram.pdb
+D:\專題\gradeprogram\gradeprogram\bin\Antlr3.Runtime.dll
+D:\專題\gradeprogram\gradeprogram\bin\EntityFramework.dll
+D:\專題\gradeprogram\gradeprogram\bin\EntityFramework.SqlServer.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.Agent.Intercept.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.DependencyCollector.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.Web.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.WindowsServer.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.ApplicationInsights.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Core.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Cookies.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Facebook.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Google.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.OAuth.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Twitter.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Web.Infrastructure.dll
+D:\專題\gradeprogram\gradeprogram\bin\Newtonsoft.Json.dll
+D:\專題\gradeprogram\gradeprogram\bin\Owin.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Helpers.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Mvc.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Optimization.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Razor.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.WebPages.Deployment.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.WebPages.dll
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.WebPages.Razor.dll
+D:\專題\gradeprogram\gradeprogram\bin\WebGrease.dll
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.DependencyCollector.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.Web.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AI.WindowsServer.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.ApplicationInsights.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Helpers.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Mvc.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Optimization.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Razor.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.WebPages.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.WebPages.Deployment.xml
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.WebPages.Razor.xml
+D:\專題\gradeprogram\gradeprogram\bin\Antlr3.Runtime.pdb
+D:\專題\gradeprogram\gradeprogram\bin\Newtonsoft.Json.xml
+D:\專題\gradeprogram\gradeprogram\bin\EntityFramework.xml
+D:\專題\gradeprogram\gradeprogram\bin\EntityFramework.SqlServer.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Core.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Facebook.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Cookies.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.OAuth.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Google.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Twitter.xml
+D:\專題\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Helpers.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Mvc.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Optimization.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Razor.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.WebPages.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\EntityFramework.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+D:\專題\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\專題\gradeprogram\gradeprogram\obj\Debug\gradeprogram.dll
+D:\專題\gradeprogram\gradeprogram\obj\Debug\gradeprogram.pdb
+D:\專題\gradeprogram\gradeprogram\bin\System.Web.Optimization.HashCache.dll
+D:\專題\gradeprogram\gradeprogram\obj\Debug\gradeprogram.csprojResolveAssemblyReference.cache
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\ApplicationInsights.config
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\csc.exe
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\vbc.exe
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\VBCSCompiler.exe
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\gradeprogram.dll.config
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\gradeprogram.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\gradeprogram.pdb
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Antlr3.Runtime.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\EntityFramework.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\EntityFramework.SqlServer.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.Web.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.ApplicationInsights.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Newtonsoft.Json.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Owin.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Helpers.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Mvc.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Optimization.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Optimization.HashCache.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Razor.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.WebPages.Deployment.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.WebPages.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.WebPages.Razor.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\WebGrease.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.Web.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.ApplicationInsights.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Helpers.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Mvc.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Optimization.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.Razor.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.WebPages.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.WebPages.Deployment.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\System.Web.WebPages.Razor.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Antlr3.Runtime.pdb
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Newtonsoft.Json.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\EntityFramework.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\EntityFramework.SqlServer.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\obj\Debug\gradeprogram.dll
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\obj\Debug\gradeprogram.pdb
+C:\Users\chiu\Desktop\Integrate Program comparing to Hints\gradeprogram\gradeprogram\obj\Debug\gradeprogram.csprojResolveAssemblyReference.cache

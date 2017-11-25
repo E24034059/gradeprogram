@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NewVersionHintsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Program_Answer">
+          <Key>
+            <PropertyRef Name="cQID" />
+          </Key>
+          <Property Name="cQID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cTestingDataAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cAnswer_Input" Type="text" />
+        </EntityType>
+        <EntityType Name="Program_Question">
+          <Key>
+            <PropertyRef Name="cQID" />
+          </Key>
+          <Property Name="cQID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cQuestion" Type="text" />
+          <Property Name="OutputExample" Type="text" />
+        </EntityType>
+        <EntityContainer Name="NewVersionHintsDBModelStoreContainer">
+          <EntitySet Name="Program_Answer" EntityType="Self.Program_Answer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Program_Question" EntityType="Self.Program_Question" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NewVersionHintsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Program_Answer">
+          <Key>
+            <PropertyRef Name="cQID" />
+          </Key>
+          <Property Name="cQID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cTestingDataAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cAnswer_Input" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Program_Question">
+          <Key>
+            <PropertyRef Name="cQID" />
+          </Key>
+          <Property Name="cQID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OutputExample" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="NewVersionHintsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Program_Answer" EntityType="Self.Program_Answer" />
+          <EntitySet Name="Program_Question" EntityType="Self.Program_Question" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NewVersionHintsDBModelStoreContainer" CdmEntityContainer="NewVersionHintsDBEntities">
+          <EntitySetMapping Name="Program_Answer">
+            <EntityTypeMapping TypeName="NewVersionHintsDBModel.Program_Answer">
+              <MappingFragment StoreEntitySet="Program_Answer">
+                <ScalarProperty Name="cQID" ColumnName="cQID" />
+                <ScalarProperty Name="cTestingDataAmount" ColumnName="cTestingDataAmount" />
+                <ScalarProperty Name="cAnswer_Input" ColumnName="cAnswer_Input" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Program_Question">
+            <EntityTypeMapping TypeName="NewVersionHintsDBModel.Program_Question">
+              <MappingFragment StoreEntitySet="Program_Question">
+                <ScalarProperty Name="cQID" ColumnName="cQID" />
+                <ScalarProperty Name="cQuestion" ColumnName="cQuestion" />
+                <ScalarProperty Name="OutputExample" ColumnName="OutputExample" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

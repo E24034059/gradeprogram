@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CorrectStuHWDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+    </Key>
+    <Property Name="Course_ID" Type="int" Nullable="false" />
+    <Property Name="Course_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompileFail_Stu">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StudentNo" Type="int" />
+  </EntityType>
+  <EntityType Name="Correct_Answer">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+      <PropertyRef Name="HW_Exam_Number" />
+    </Key>
+    <Property Name="Course_ID" Type="int" Nullable="false" />
+    <Property Name="HW_Exam_Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cQID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HW_Exam">
+    <Key>
+      <PropertyRef Name="StuCouHWDe_ID" />
+    </Key>
+    <Property Name="Stu_Personal_HW_Exam_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HW_Exam_Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HW_Exam_grade" Type="nvarchar(max)" />
+    <Property Name="StuCouHWDe_ID" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HW_Exam_File">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+      <PropertyRef Name="HW_Exam_Number" />
+    </Key>
+    <Property Name="Course_ID" Type="int" Nullable="false" />
+    <Property Name="HW_Exam_Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HW_Exam_FilePath" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="InstructorPro">
+    <Key>
+      <PropertyRef Name="Instructor_ID" />
+    </Key>
+    <Property Name="Instructor_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Instructor_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Instructor_Or_TA" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORCS_ProgramFileUploadData">
+    <Key>
+      <PropertyRef Name="cExerciseCondID" />
+      <PropertyRef Name="cExerciseID" />
+      <PropertyRef Name="StuCouHWDe_ID" />
+    </Key>
+    <Property Name="cExerciseCondID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="cExerciseID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StuCouHWDe_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cFileName" Type="text" Nullable="false" />
+    <Property Name="iClassGroupID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuestionIndex">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cQuestion" Type="text" />
+    <Property Name="sLevel" Type="smallint" Nullable="false" />
+    <Property Name="cAnswer" Type="text" />
+    <Property Name="cKeyWords" Type="text" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CorrectStuHWDB.dbo.QuestionMode' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="QuestionMode">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cPaperID" Type="varchar" MaxLength="50" />
+    <Property Name="cDivisionID" Type="varchar" MaxLength="10" />
+    <Property Name="cQuestionGroupID" Type="varchar" MaxLength="50" />
+    <Property Name="cQuestionGroupName" Type="varchar" MaxLength="50" />
+    <Property Name="cQuestionMode" Type="varchar" MaxLength="50" />
+    <Property Name="cQuestionType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StuCouHWDe_prog">
+    <Key>
+      <PropertyRef Name="StuCouHWDe_ID" />
+    </Key>
+    <Property Name="StuCouHWDe_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pass_compilation" Type="varchar(max)" />
+    <Property Name="Success_execution" Type="varchar(max)" />
+    <Property Name="Compare_situation" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="StuPro">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Student_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Take_Course">
+    <Key>
+      <PropertyRef Name="Stu_Personal_HW_Exam_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Course_ID" Type="int" Nullable="false" />
+    <Property Name="Stu_Personal_HW_Exam_ID" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaughtBy">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+      <PropertyRef Name="Instructor_ID" />
+    </Key>
+    <Property Name="Course_ID" Type="int" Nullable="false" />
+    <Property Name="Instructor_ID" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Correct_Answer_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Correct_Answer" Type="Self.Correct_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="Correct_Answer">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HW_Exam_File_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HW_Exam_File" Type="Self.HW_Exam_File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="HW_Exam_File">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HW_Exam_Take_Course">
+    <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Take_Course">
+        <PropertyRef Name="Stu_Personal_HW_Exam_ID" />
+      </Principal>
+      <Dependent Role="HW_Exam">
+        <PropertyRef Name="Stu_Personal_HW_Exam_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StuCouHWDe_HW_Exam">
+    <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="HW_Exam">
+        <PropertyRef Name="StuCouHWDe_ID" />
+      </Principal>
+      <Dependent Role="StuCouHWDe_prog">
+        <PropertyRef Name="StuCouHWDe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Take_Course_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="Take_Course">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Take_Course_StuPro">
+    <End Role="StuPro" Type="Self.StuPro" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StuPro">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Take_Course">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaughtBy_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TaughtBy" Type="Self.TaughtBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="TaughtBy">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaughtBy_InstructorPro">
+    <End Role="InstructorPro" Type="Self.InstructorPro" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TaughtBy" Type="Self.TaughtBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstructorPro">
+        <PropertyRef Name="Instructor_ID" />
+      </Principal>
+      <Dependent Role="TaughtBy">
+        <PropertyRef Name="Instructor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CorrectStuHWDBModelStoreContainer">
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompileFail_Stu" EntityType="Self.CompileFail_Stu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Correct_Answer" EntityType="Self.Correct_Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HW_Exam" EntityType="Self.HW_Exam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HW_Exam_File" EntityType="Self.HW_Exam_File" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstructorPro" EntityType="Self.InstructorPro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORCS_ProgramFileUploadData" EntityType="Self.ORCS_ProgramFileUploadData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionIndex" EntityType="Self.QuestionIndex" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StuCouHWDe_prog" EntityType="Self.StuCouHWDe_prog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StuPro" EntityType="Self.StuPro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Take_Course" EntityType="Self.Take_Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaughtBy" EntityType="Self.TaughtBy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionMode" EntityType="Self.QuestionMode" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [QuestionMode].[cQID] AS [cQID], 
+    [QuestionMode].[cPaperID] AS [cPaperID], 
+    [QuestionMode].[cDivisionID] AS [cDivisionID], 
+    [QuestionMode].[cQuestionGroupID] AS [cQuestionGroupID], 
+    [QuestionMode].[cQuestionGroupName] AS [cQuestionGroupName], 
+    [QuestionMode].[cQuestionMode] AS [cQuestionMode], 
+    [QuestionMode].[cQuestionType] AS [cQuestionType]
+    FROM [dbo].[QuestionMode] AS [QuestionMode]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Correct_Answer_Class" Association="Self.FK_Correct_Answer_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Correct_Answer" EntitySet="Correct_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HW_Exam_File_Class" Association="Self.FK_HW_Exam_File_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="HW_Exam_File" EntitySet="HW_Exam_File" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HW_Exam_Take_Course" Association="Self.FK_HW_Exam_Take_Course">
+      <End Role="Take_Course" EntitySet="Take_Course" />
+      <End Role="HW_Exam" EntitySet="HW_Exam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StuCouHWDe_HW_Exam" Association="Self.FK_StuCouHWDe_HW_Exam">
+      <End Role="HW_Exam" EntitySet="HW_Exam" />
+      <End Role="StuCouHWDe_prog" EntitySet="StuCouHWDe_prog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Take_Course_Class" Association="Self.FK_Take_Course_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Take_Course" EntitySet="Take_Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Take_Course_StuPro" Association="Self.FK_Take_Course_StuPro">
+      <End Role="StuPro" EntitySet="StuPro" />
+      <End Role="Take_Course" EntitySet="Take_Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaughtBy_Class" Association="Self.FK_TaughtBy_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="TaughtBy" EntitySet="TaughtBy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaughtBy_InstructorPro" Association="Self.FK_TaughtBy_InstructorPro">
+      <End Role="InstructorPro" EntitySet="InstructorPro" />
+      <End Role="TaughtBy" EntitySet="TaughtBy" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

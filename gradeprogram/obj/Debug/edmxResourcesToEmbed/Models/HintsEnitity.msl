@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewVersionHintsDBModelStoreContainer" CdmEntityContainer="NewVersionHintsDBEntities">
+    <EntitySetMapping Name="Program_Answer">
+      <EntityTypeMapping TypeName="NewVersionHintsDBModel.Program_Answer">
+        <MappingFragment StoreEntitySet="Program_Answer">
+          <ScalarProperty Name="cQID" ColumnName="cQID" />
+          <ScalarProperty Name="cTestingDataAmount" ColumnName="cTestingDataAmount" />
+          <ScalarProperty Name="cAnswer_Input" ColumnName="cAnswer_Input" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Program_Question">
+      <EntityTypeMapping TypeName="NewVersionHintsDBModel.Program_Question">
+        <MappingFragment StoreEntitySet="Program_Question">
+          <ScalarProperty Name="cQID" ColumnName="cQID" />
+          <ScalarProperty Name="cQuestion" ColumnName="cQuestion" />
+          <ScalarProperty Name="OutputExample" ColumnName="OutputExample" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

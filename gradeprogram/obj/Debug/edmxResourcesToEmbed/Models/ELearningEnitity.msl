@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CorrectStuHWDBModelStoreContainer" CdmEntityContainer="CorrectStuHWDBEntities">
+    <EntitySetMapping Name="Class">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+          <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompileFail_Stu">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.CompileFail_Stu">
+        <MappingFragment StoreEntitySet="CompileFail_Stu">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="StudentNo" ColumnName="StudentNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Correct_Answer">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.Correct_Answer">
+        <MappingFragment StoreEntitySet="Correct_Answer">
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+          <ScalarProperty Name="HW_Exam_Number" ColumnName="HW_Exam_Number" />
+          <ScalarProperty Name="cQID" ColumnName="cQID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HW_Exam">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.HW_Exam">
+        <MappingFragment StoreEntitySet="HW_Exam">
+          <ScalarProperty Name="Stu_Personal_HW_Exam_ID" ColumnName="Stu_Personal_HW_Exam_ID" />
+          <ScalarProperty Name="HW_Exam_Number" ColumnName="HW_Exam_Number" />
+          <ScalarProperty Name="HW_Exam_grade" ColumnName="HW_Exam_grade" />
+          <ScalarProperty Name="StuCouHWDe_ID" ColumnName="StuCouHWDe_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HW_Exam_File">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.HW_Exam_File">
+        <MappingFragment StoreEntitySet="HW_Exam_File">
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+          <ScalarProperty Name="HW_Exam_Number" ColumnName="HW_Exam_Number" />
+          <ScalarProperty Name="HW_Exam_FilePath" ColumnName="HW_Exam_FilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstructorPro">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.InstructorPro">
+        <MappingFragment StoreEntitySet="InstructorPro">
+          <ScalarProperty Name="Instructor_ID" ColumnName="Instructor_ID" />
+          <ScalarProperty Name="Instructor_Name" ColumnName="Instructor_Name" />
+          <ScalarProperty Name="Instructor_Or_TA" ColumnName="Instructor_Or_TA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORCS_ProgramFileUploadData">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.ORCS_ProgramFileUploadData">
+        <MappingFragment StoreEntitySet="ORCS_ProgramFileUploadData">
+          <ScalarProperty Name="cExerciseCondID" ColumnName="cExerciseCondID" />
+          <ScalarProperty Name="cExerciseID" ColumnName="cExerciseID" />
+          <ScalarProperty Name="StuCouHWDe_ID" ColumnName="StuCouHWDe_ID" />
+          <ScalarProperty Name="cFileName" ColumnName="cFileName" />
+          <ScalarProperty Name="iClassGroupID" ColumnName="iClassGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionIndex">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.QuestionIndex">
+        <MappingFragment StoreEntitySet="QuestionIndex">
+          <ScalarProperty Name="cQID" ColumnName="cQID" />
+          <ScalarProperty Name="cQuestion" ColumnName="cQuestion" />
+          <ScalarProperty Name="sLevel" ColumnName="sLevel" />
+          <ScalarProperty Name="cAnswer" ColumnName="cAnswer" />
+          <ScalarProperty Name="cKeyWords" ColumnName="cKeyWords" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StuCouHWDe_prog">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.StuCouHWDe_prog">
+        <MappingFragment StoreEntitySet="StuCouHWDe_prog">
+          <ScalarProperty Name="StuCouHWDe_ID" ColumnName="StuCouHWDe_ID" />
+          <ScalarProperty Name="Pass_compilation" ColumnName="Pass_compilation" />
+          <ScalarProperty Name="Success_execution" ColumnName="Success_execution" />
+          <ScalarProperty Name="Compare_situation" ColumnName="Compare_situation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StuPro">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.StuPro">
+        <MappingFragment StoreEntitySet="StuPro">
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Take_Course">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.Take_Course">
+        <MappingFragment StoreEntitySet="Take_Course">
+          <ScalarProperty Name="Stu_Personal_HW_Exam_ID" ColumnName="Stu_Personal_HW_Exam_ID" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionMode">
+      <EntityTypeMapping TypeName="CorrectStuHWDBModel.QuestionMode">
+        <MappingFragment StoreEntitySet="QuestionMode">
+          <ScalarProperty Name="cQID" ColumnName="cQID" />
+          <ScalarProperty Name="cPaperID" ColumnName="cPaperID" />
+          <ScalarProperty Name="cDivisionID" ColumnName="cDivisionID" />
+          <ScalarProperty Name="cQuestionGroupID" ColumnName="cQuestionGroupID" />
+          <ScalarProperty Name="cQuestionGroupName" ColumnName="cQuestionGroupName" />
+          <ScalarProperty Name="cQuestionMode" ColumnName="cQuestionMode" />
+          <ScalarProperty Name="cQuestionType" ColumnName="cQuestionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TaughtBy" TypeName="CorrectStuHWDBModel.TaughtBy" StoreEntitySet="TaughtBy">
+      <EndProperty Name="Class">
+        <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
+      </EndProperty>
+      <EndProperty Name="InstructorPro">
+        <ScalarProperty Name="Instructor_ID" ColumnName="Instructor_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

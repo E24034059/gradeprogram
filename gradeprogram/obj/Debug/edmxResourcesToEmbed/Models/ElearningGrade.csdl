@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CorrectStuHWDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+    </Key>
+    <Property Name="Course_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Course_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Correct_Answer" Relationship="Self.FK_Correct_Answer_Class" FromRole="Class" ToRole="Correct_Answer" />
+    <NavigationProperty Name="Take_Course" Relationship="Self.FK_Take_Course_Class" FromRole="Class" ToRole="Take_Course" />
+    <NavigationProperty Name="InstructorPro" Relationship="Self.TaughtBy" FromRole="Class" ToRole="InstructorPro" />
+    <NavigationProperty Name="HW_Exam_File" Relationship="CorrectStuHWDBModel.FK_HW_Exam_File_Class" FromRole="Class" ToRole="HW_Exam_File" />
+  </EntityType>
+  <EntityType Name="CompileFail_Stu">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HW_Exam">
+    <Key>
+      <PropertyRef Name="StuCouHWDe_ID" />
+    </Key>
+    <Property Name="HW_Exam_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HW_Exam_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HW_Exam_grade" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
+    <Property Name="StuCouHWDe_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Take_Course" Relationship="Self.FK_HW_Exam_Take_Course" FromRole="HW_Exam" ToRole="Take_Course" />
+    <NavigationProperty Name="StuCouHWDe_prog" Relationship="CorrectStuHWDBModel.FK_StuCouHWDe_HW_Exam" FromRole="HW_Exam" ToRole="StuCouHWDe_prog" />
+  </EntityType>
+  <EntityType Name="InstructorPro">
+    <Key>
+      <PropertyRef Name="Instructor_ID" />
+    </Key>
+    <Property Name="Instructor_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Instructor_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Instructor_Or_TA" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Class" Relationship="Self.TaughtBy" FromRole="InstructorPro" ToRole="Class" />
+  </EntityType>
+  <EntityType Name="StuPro" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Student_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Take_Course" Relationship="Self.FK_Take_Course_StuPro" FromRole="StuPro" ToRole="Take_Course" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Take_Course">
+    <Key>
+      <PropertyRef Name="HW_Exam_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Course_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HW_Exam_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Class" Relationship="Self.FK_Take_Course_Class" FromRole="Take_Course" ToRole="Class" />
+    <NavigationProperty Name="HW_Exam" Relationship="Self.FK_HW_Exam_Take_Course" FromRole="Take_Course" ToRole="HW_Exam" />
+    <NavigationProperty Name="StuPro" Relationship="Self.FK_Take_Course_StuPro" FromRole="Take_Course" ToRole="StuPro" />
+  </EntityType>
+  <EntityType Name="Correct_Answer">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+      <PropertyRef Name="HW_Exam_Number" />
+    </Key>
+    <Property Name="Course_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HW_Exam_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CorrectAnswerFilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Class" Relationship="Self.FK_Correct_Answer_Class" FromRole="Correct_Answer" ToRole="Class" />
+  </EntityType>
+  <Association Name="FK_Correct_Answer_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Correct_Answer" Type="Self.Correct_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="Correct_Answer">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Take_Course_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="Take_Course">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HW_Exam_Take_Course">
+    <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Take_Course">
+        <PropertyRef Name="HW_Exam_ID" />
+      </Principal>
+      <Dependent Role="HW_Exam">
+        <PropertyRef Name="HW_Exam_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Take_Course_StuPro">
+    <End Role="StuPro" Type="Self.StuPro" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StuPro">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Take_Course">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaughtBy">
+    <End Role="Class" Type="Self.Class" Multiplicity="*" />
+    <End Role="InstructorPro" Type="Self.InstructorPro" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="CorrectStuHWDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Class" EntityType="Self.Class" />
+    <EntitySet Name="CompileFail_Stu" EntityType="Self.CompileFail_Stu" />
+    <EntitySet Name="HW_Exam" EntityType="Self.HW_Exam" />
+    <EntitySet Name="InstructorPro" EntityType="Self.InstructorPro" />
+    <EntitySet Name="StuPro" EntityType="Self.StuPro" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Take_Course" EntityType="Self.Take_Course" />
+    <EntitySet Name="Correct_Answer" EntityType="Self.Correct_Answer" />
+    <AssociationSet Name="FK_Correct_Answer_Class" Association="Self.FK_Correct_Answer_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Correct_Answer" EntitySet="Correct_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Take_Course_Class" Association="Self.FK_Take_Course_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Take_Course" EntitySet="Take_Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HW_Exam_Take_Course" Association="Self.FK_HW_Exam_Take_Course">
+      <End Role="Take_Course" EntitySet="Take_Course" />
+      <End Role="HW_Exam" EntitySet="HW_Exam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Take_Course_StuPro" Association="Self.FK_Take_Course_StuPro">
+      <End Role="StuPro" EntitySet="StuPro" />
+      <End Role="Take_Course" EntitySet="Take_Course" />
+    </AssociationSet>
+    <AssociationSet Name="TaughtBy" Association="Self.TaughtBy">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="InstructorPro" EntitySet="InstructorPro" />
+    </AssociationSet>
+    <EntitySet Name="HW_Exam_File" EntityType="CorrectStuHWDBModel.HW_Exam_File" />
+    <AssociationSet Name="FK_HW_Exam_File_Class" Association="CorrectStuHWDBModel.FK_HW_Exam_File_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="HW_Exam_File" EntitySet="HW_Exam_File" />
+    </AssociationSet>
+    <EntitySet Name="StuCouHWDe_prog" EntityType="CorrectStuHWDBModel.StuCouHWDe_prog" />
+    <AssociationSet Name="FK_StuCouHWDe_HW_Exam" Association="CorrectStuHWDBModel.FK_StuCouHWDe_HW_Exam">
+      <End Role="HW_Exam" EntitySet="HW_Exam" />
+      <End Role="StuCouHWDe_prog" EntitySet="StuCouHWDe_prog" />
+    </AssociationSet>
+    <EntitySet Name="Program_Answer" EntityType="CorrectStuHWDBModel.Program_Answer" />
+    <EntitySet Name="Program_Question" EntityType="CorrectStuHWDBModel.Program_Question" />
+    <EntitySet Name="QuestionIndex" EntityType="CorrectStuHWDBModel.QuestionIndex" />
+    <EntitySet Name="ORCS_FileUploadData" EntityType="CorrectStuHWDBModel.ORCS_FileUploadData" />
+    <EntitySet Name="QuestionMode" EntityType="CorrectStuHWDBModel.QuestionMode" />
+  </EntityContainer>
+  <EntityType Name="HW_Exam_File">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+      <PropertyRef Name="HW_Exam_Number" />
+    </Key>
+    <Property Name="Course_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HW_Exam_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HW_Exam_FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Class" Relationship="CorrectStuHWDBModel.FK_HW_Exam_File_Class" FromRole="HW_Exam_File" ToRole="Class" />
+  </EntityType>
+  <Association Name="FK_HW_Exam_File_Class">
+    <End Type="CorrectStuHWDBModel.Class" Role="Class" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CorrectStuHWDBModel.HW_Exam_File" Role="HW_Exam_File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="HW_Exam_File">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="StuCouHWDe_prog">
+    <Key>
+      <PropertyRef Name="StuCouHWDe_ID" />
+    </Key>
+    <Property Name="StuCouHWDe_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pass_compilation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Success_execution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Compare_situation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HW_Exam" Relationship="CorrectStuHWDBModel.FK_StuCouHWDe_HW_Exam" FromRole="StuCouHWDe_prog" ToRole="HW_Exam" />
+  </EntityType>
+  <Association Name="FK_StuCouHWDe_HW_Exam">
+    <End Type="CorrectStuHWDBModel.HW_Exam" Role="HW_Exam" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CorrectStuHWDBModel.StuCouHWDe_prog" Role="StuCouHWDe_prog" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="HW_Exam">
+        <PropertyRef Name="StuCouHWDe_ID" />
+      </Principal>
+      <Dependent Role="StuCouHWDe_prog">
+        <PropertyRef Name="StuCouHWDe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Program_Answer">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cAID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cAnswer_Input" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Program_Question">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OutputExample" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="QuestionIndex">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sLevel" Type="Int16" Nullable="false" />
+    <Property Name="cAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cKeyWords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORCS_FileUploadData">
+    <Key>
+      <PropertyRef Name="cExerciseCondID" />
+      <PropertyRef Name="cExerciseID" />
+      <PropertyRef Name="cUserID" />
+      <PropertyRef Name="cFileName" />
+      <PropertyRef Name="iClassGroupID" />
+    </Key>
+    <Property Name="cExerciseCondID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cExerciseID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cUserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cFileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="iClassGroupID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuestionMode">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cPaperID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cDivisionID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cQuestionGroupID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cQuestionGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cQuestionMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cQuestionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

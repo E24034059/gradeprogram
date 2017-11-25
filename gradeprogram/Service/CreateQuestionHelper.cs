@@ -108,7 +108,7 @@ namespace gradeprogram.Service
                 testinput.Close();
                 count += 1;
             }
-            answer.cAID =(count-1).ToString();
+            answer.cTestingDataAmount =(count-1).ToString();
             return Apath.AnswerFilePath;
         }
 

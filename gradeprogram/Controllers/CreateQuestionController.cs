@@ -49,7 +49,7 @@ namespace gradeprogram.Controllers
             string HWdatas = string.Empty;
             if (!string.IsNullOrWhiteSpace(Course_ID))
             {
-                HWdatas = this.CreateQuestionService.GetHWNum(Course_ID, tagName, null);
+                HWdatas = this.CreateQuestionService.GetHWNum(int.Parse(Course_ID), tagName, null);
             }
             return Content(HWdatas);
         }

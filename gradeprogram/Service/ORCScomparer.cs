@@ -6,9 +6,9 @@ using gradeprogram.Models;
 
 namespace gradeprogram.Service
 {
-    public class ORCScomparer: IEqualityComparer<ORCS_FileUploadData>
+    public class ORCScomparer: IEqualityComparer<ORCS_ProgramFileUploadData>
     {
-        public bool Equals(ORCS_FileUploadData x, ORCS_FileUploadData y)
+        public bool Equals(ORCS_ProgramFileUploadData x, ORCS_ProgramFileUploadData y)
         {
 
             //Check whether the compared objects reference the same data.
@@ -25,7 +25,7 @@ namespace gradeprogram.Service
         // If Equals() returns true for a pair of objects 
         // then GetHashCode() must return the same value for these objects.
 
-        public int GetHashCode(ORCS_FileUploadData ORCSobj)
+        public int GetHashCode(ORCS_ProgramFileUploadData ORCSobj)
         {
             //Check whether the object is null
             if (Object.ReferenceEquals(ORCSobj, null)) return 0;

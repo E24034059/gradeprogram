@@ -23,11 +23,12 @@ namespace gradeprogram.Service.Interface
 
         IEnumerable<Class> GetAllClass();
 
-        string GetHWNum(string CourseID, string tagName, string selectedValue);
-        string GetExerciseData(string CourseID, string tagName, string selectedValue);
-        string GetTypes(string CourseID, string tagName, string selectedValue);
+        string GetHWNum(int CourseID, string tagName, string selectedValue);
+        string GetExerciseData(int CourseID, string tagName, string selectedValue);
+        string GetTypes(int CourseID, string tagName, string selectedValue);
 
-        void CorrectTask(string CourseID,string assignmentType,string HWNum);
-        bool IsAnswerExists(string Course_ID,string HWNum);
+       // void CorrectTask(int CourseID,string assignmentType,string HWNum);
+        string CorrectTask(string ProgramFilePath, string cQID, string StuCouHWDe_ID,string questionNum);
+        bool IsAnswerExists(int Course_ID,string HWNum);
     }
 }

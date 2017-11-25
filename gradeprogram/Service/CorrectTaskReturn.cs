@@ -86,7 +86,7 @@ namespace gradeprogram.Service
             }
         }
 
-        public string score()
+        public string score(string questionNum)
         {
             int stages = 1;
             int[] scores = {0,3,0,0,0};
@@ -120,7 +120,7 @@ namespace gradeprogram.Service
                 temp += i.ToString() + @",";
             }
 
-            HW_Grade = @"1," +temp.TrimEnd(',') + @":";
+            HW_Grade = questionNum+@"," +temp.TrimEnd(',') + @":";
             return HW_Grade;
         }
     }

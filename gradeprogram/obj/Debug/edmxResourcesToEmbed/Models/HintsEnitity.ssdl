@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewVersionHintsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Program_Answer">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cTestingDataAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cAnswer_Input" Type="text" />
+  </EntityType>
+  <EntityType Name="Program_Question">
+    <Key>
+      <PropertyRef Name="cQID" />
+    </Key>
+    <Property Name="cQID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cQuestion" Type="text" />
+    <Property Name="OutputExample" Type="text" />
+  </EntityType>
+  <EntityContainer Name="NewVersionHintsDBModelStoreContainer">
+    <EntitySet Name="Program_Answer" EntityType="Self.Program_Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Program_Question" EntityType="Self.Program_Question" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

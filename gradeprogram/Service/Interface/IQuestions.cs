@@ -14,19 +14,19 @@ namespace gradeprogram.Service.Interface
 
         IResult Update(Correct_Answer instance);
 
-        IResult Delete(string CourseID,string HWNum);
+        IResult Delete(int CourseID,string HWNum);
 
-        bool IsExists(string CourseID, string HWNum);
+        bool IsExists(int CourseID, string HWNum);
 
-         Correct_Answer GetByID(string CourseID, string HWNum);
+         Correct_Answer GetByID(int CourseID, string HWNum);
 
         IEnumerable<Correct_Answer> GetAll();
 
         IEnumerable<Class> GetAllClass();
 
         IEnumerable<Take_Course> GetAllHWNum();
-        string GetHWNum(string CourseID, string tagName, string selectedValue);
-        string GetClassName(string CourseID);
+        string GetHWNum(int CourseID, string tagName, string selectedValue);
+        string GetClassName(int CourseID);
 
 
     }

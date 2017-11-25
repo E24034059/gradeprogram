@@ -14,15 +14,15 @@ namespace gradeprogram.Service
 {
     public class Questions : IQuestions
     {
-        private IRepository<Correct_Answer> CorrectAnsrepository = new GenericRepository<Correct_Answer>();
-        private IRepository<Class> Classrepository = new GenericRepository<Class>();
-        private IRepository<Take_Course> HWNumrepository = new GenericRepository<Take_Course>();
-        private IRepository<HW_Exam> HWrepository = new GenericRepository<HW_Exam>();
+        private IRepository<Correct_Answer> CorrectAnsrepository = new CorrectDBGenericRepository<Correct_Answer>();
+        private IRepository<Class> Classrepository = new CorrectDBGenericRepository<Class>();
+        private IRepository<Take_Course> HWNumrepository = new CorrectDBGenericRepository<Take_Course>();
+        private IRepository<HW_Exam> HWrepository = new CorrectDBGenericRepository<HW_Exam>();
 
-        private IRepository<Program_Question> Questionrepository = new GenericRepository<Program_Question>();
-        private IRepository<Program_Answer> Answerrepository = new GenericRepository<Program_Answer>();
-        private IRepository<QuestionIndex> QIndexrepository = new GenericRepository<QuestionIndex>();
-        private IRepository<QuestionMode> QModerepository = new GenericRepository<QuestionMode>();
+        private IRepository<Program_Question> Questionrepository = new HintDBGenericRepository<Program_Question>();
+        private IRepository<Program_Answer> Answerrepository = new HintDBGenericRepository<Program_Answer>();
+        private IRepository<QuestionIndex> QIndexrepository = new CorrectDBGenericRepository<QuestionIndex>();
+        private IRepository<QuestionMode> QModerepository = new CorrectDBGenericRepository<QuestionMode>();
 
         public IResult Create(QuestionObj instance)
         {
@@ -70,7 +70,7 @@ namespace gradeprogram.Service
             return result;
         }
 
-        public IResult Delete(string CourseID,string HWNum)
+        public IResult Delete(int CourseID,string HWNum)
         {
             IResult result = new Result(false);
 
@@ -92,12 +92,12 @@ namespace gradeprogram.Service
             return result;
         }
 
-        public bool IsExists(string CourseID,string HWNum)
+        public bool IsExists(int CourseID,string HWNum)
         {
             return this.CorrectAnsrepository.GetAll().Any(x => x.Course_ID == CourseID && x.HW_Exam_Number == HWNum);
         }
 
-        public Correct_Answer GetByID(string CourseID,string HWNum)
+        public Correct_Answer GetByID(int CourseID,string HWNum)
         {
             return this.CorrectAnsrepository.Get(x => x.Course_ID == CourseID && x.HW_Exam_Number == HWNum);
         }
@@ -117,11 +117,11 @@ namespace gradeprogram.Service
             return this.HWNumrepository.GetAll();
         }
 
-        public string GetClassName(string CourseID)
+        public string GetClassName(int CourseID)
         {
             return this.Classrepository.Get(x => x.Course_ID == CourseID).Course_Name;
         }
-        public string GetHWNum(string CourseID,string tagName,string selectedValue)
+        public string GetHWNum(int CourseID,string tagName,string selectedValue)
         {
 
            
