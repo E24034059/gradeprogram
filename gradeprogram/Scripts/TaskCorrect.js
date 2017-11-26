@@ -66,6 +66,7 @@ function ChangeType() {
 }
 
 function CorrectSelectTask() {
+    var selectedCourseName = $("#Course").find(":selected").text();
     var selectedCourseId = $("#Course").find(":selected").val();
     var selectassignmentType = $.trim($('#assignmentType option:selected').text());
     var selectedHWNum = $("#HWNum option:selected").text();
@@ -84,13 +85,14 @@ function CorrectSelectTask() {
                    $.ajax(
                          {
                              url: "CorrectTask",
-                             data: { Course_ID: selectedCourseId, assignmentType: selectassignmentType, HWNum: selectedHWNum },
+                             data: { Course_ID: selectedCourseId, HWNum: selectedHWNum },
                              type: "POST",
                              cache: false,
                              async: false,
                              dataType: 'html',
                              success: function (data) {
-                                 
+                                 alert(data);
+                                 window.location.href = 'TaskCorrection';
                              }
                          });
                    

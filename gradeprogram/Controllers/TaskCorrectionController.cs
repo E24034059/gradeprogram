@@ -83,12 +83,12 @@ namespace gradeprogram.Controllers
         
 
         [HttpPost]
-        public ActionResult CorrectTask(string Course_ID,string assignmentType,string HWNum)
+        public ActionResult CorrectTask(string Course_ID,string HWNum)
         {
-          
-            this.TaskCorrectionService.CorrectTask( int.Parse(Course_ID), assignmentType, HWNum);
+            string result;
+            result=this.TaskCorrectionService.CorrectTask(int.Parse(Course_ID), HWNum);
 
-            return RedirectToAction("TaskCorrection");
+            return Content(result);
         }
     }
 

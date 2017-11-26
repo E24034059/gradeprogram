@@ -27,7 +27,7 @@ namespace gradeprogram.Service.Interface
         string GetExerciseData(int CourseID, string tagName, string selectedValue);
         string GetTypes(int CourseID, string tagName, string selectedValue);
 
-       // void CorrectTask(int CourseID,string assignmentType,string HWNum);
+        string CorrectTask(int CourseID,string HWNum);
         string CorrectTask(string ProgramFilePath, string cQID, string StuCouHWDe_ID,string questionNum);
         bool IsAnswerExists(int Course_ID,string HWNum);
     }

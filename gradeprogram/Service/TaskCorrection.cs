@@ -194,73 +194,21 @@ namespace gradeprogram.Service
             string _html = DropDownListHelper.GetDropdownList(tagName, optionData, selectedValue, null, true, "選擇類型");
             return _html;
         }
-        /*public void CorrectTask(int CourseID, string assignmentType, string HWNum)
+        public string CorrectTask(int CourseID, string HWNum)
         {
             List<HW_Exam> StuHW = new List<HW_Exam>();
             List<StuCouHWDe_prog> StuHWDe = new List<StuCouHWDe_prog>();
+            string ClassName;
             string HWdata;
-            string HWAnswer;
             string cQID;
-            Program_Answer answer;
-            if (assignmentType == "HW_Exam")
-            {
-                HWdata = this.HWFilerepository.Get(x => x.Course_ID == CourseID && x.HW_Exam_Number == HWNum).HW_Exam_FilePath;
-                cQID = this.CorrectAnswerrepository.Get(x => x.Course_ID == CourseID && x.HW_Exam_Number == HWNum).cQID;
-                HWAnswer = this.Answerrepository.Get(x => x.cQID == cQID).cAnswer_Input;
-            }
-            else if (assignmentType == "Exercise")
-            {
-                var exercise = this.Exerciserepository.Get(x => ((x.cExerciseCondID + x.cExerciseID) == HWNum));
-                HWdata = exercisePath + @"\" + exercise.cExerciseCondID + @"\" + exercise.cExerciseID;
-                cQID = this.CorrectAnswerrepository.Get(x => x.Course_ID == CourseID && x.HW_Exam_Number == HWNum).cQID;
-                HWAnswer = this.Answerrepository.Get(x => x.cQID == cQID).cAnswer_Input;
-            }
-            else
-            {
-                HWdata = "ErrorType";
-                HWAnswer = "ErrorType";
-                cQID = "ErrorType";
-            }
+            string result;
+            ClassName = Classrepository.Get(x=>x.Course_ID==CourseID).Course_Name;
+            HWdata = exercisePath + @"\"+ClassName+@"\"+HWNum;
+            cQID = CorrectAnswerrepository.Get(x => x.Course_ID == CourseID && x.HW_Exam_Number == HWNum).cQID;
+            result = CorrectTask(HWdata, cQID, "all", "Q1");
 
-            if (HWdata != "ErrorType")
-            {
-                HWPathHelper HWFilePath = new HWPathHelper(HWdata);
-                HWFilePath.HWPathdir();
-                AnswerPathHelper CorrectAnswer = new AnswerPathHelper(HWAnswer);
-                List<string> fileFullname = new List<string>();
-                string fileName;
-                List<CorrectTaskReturn> FinalResult = new List<CorrectTaskReturn>();
-                answer = this.Answerrepository.Get(x => x.cQID == cQID);
-                DirectoryInfo direct = new DirectoryInfo(HWFilePath.HWProgFilePath);
-
-                foreach (var file in direct.EnumerateFiles("*.cpp", SearchOption.AllDirectories))
-                {
-                    if (file.Name.IndexOf("afterMF") == -1)
-                    {
-                        fileFullname.Add(file.FullName);
-                        fileName = Path.GetFileNameWithoutExtension(file.FullName);
-                        StuHW.Add(this.HWrepository.Get(x => x.StuCouHWDe_ID == fileName));
-                        StuHWDe.Add(this.StuCouHWDerepository.Get(x => x.StuCouHWDe_ID == fileName));
-                    }
-                }
-                Parallel.ForEach(fileFullname, (onefile, loopState) => {
-                    FinalResult.Add(StartCorrect(HWFilePath, onefile, answer));
-                });
-                foreach (var result in FinalResult)
-                {
-                    HW_Exam StuHWNow = StuHW.Find(x => x.StuCouHWDe_ID == result.resultID);
-                    StuCouHWDe_prog StuHWDeNow = StuHWDe.Find(x => x.StuCouHWDe_ID == result.resultID);
-                    StuHWNow.HW_Exam_grade = result.score();
-                    StuHWDeNow.Pass_compilation = result.ComplationErrorMessage;
-                    StuHWDeNow.Success_execution = result.ExecutionErrorMessage;
-                    StuHWDeNow.Compare_situation = result.compareresult.TrimEnd(',');
-                    this.HWrepository.Update(StuHWNow);
-                    this.StuCouHWDerepository.Update(StuHWDeNow);
-                }
-
-            }
-
-        }*/
+            return result;
+        }
         public string CorrectTask(string ProgramFilePath, string cQID, string StuCouHWDe_ID,string questionNum)
         {
             try
