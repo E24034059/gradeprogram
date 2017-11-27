@@ -54,7 +54,7 @@ namespace gradeprogram.Service
             string error;
             string inputfilepath = inputfile;
             string inputfileName = Path.GetFileNameWithoutExtension(inputfile);
-            string testnum = inputfileName.Substring(inputfileName.IndexOf("_"));
+            string testnum = inputfileName.Substring(inputfileName.IndexOf("-"));
             string outputfilepath = filepath.HWOutputFilePath+@"\" + filename+testnum + @".txt";
             string errorfilepath = filepath.HWExeErrorFilePath + @"\" + filename+testnum;
 

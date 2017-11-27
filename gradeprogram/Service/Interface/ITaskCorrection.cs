@@ -30,5 +30,6 @@ namespace gradeprogram.Service.Interface
         string CorrectTask(int CourseID,string HWNum);
         string CorrectTask(string ProgramFilePath, string cQID, string StuCouHWDe_ID,string questionNum);
         bool IsAnswerExists(int Course_ID,string HWNum);
+
     }
 }

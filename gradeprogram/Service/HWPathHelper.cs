@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.IO;
+using static gradeprogram.App_Start.constants;
 
 namespace gradeprogram.Service
 {
@@ -59,7 +60,7 @@ namespace gradeprogram.Service
             get;
             set;
         }
-      
+
         public HWPathHelper()
             : this("")
         {
@@ -85,6 +86,7 @@ namespace gradeprogram.Service
             }
         }
 
+
         public void HWPathdir()
         {
             Directory.CreateDirectory(this.HWProgFilePath);
@@ -94,8 +96,5 @@ namespace gradeprogram.Service
             Directory.CreateDirectory(this.HWExeErrorFilePath);
             Directory.CreateDirectory(this.HWresultFilePath);
         }
-
-
-
     }
 }

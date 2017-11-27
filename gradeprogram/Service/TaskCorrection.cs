@@ -309,10 +309,10 @@ namespace gradeprogram.Service
                 FinalResult.IsCompilationSuccess = true;
                 DirectoryInfo direct = new DirectoryInfo(CorrectAnswer.AnswerInputFilePath);
                 int count = 0;
-                foreach (var file in direct.GetFiles(answer.cQID + "_*.txt"))
+                foreach (var file in direct.GetFiles(answer.cQID + "-*.txt"))
                 {
                     count++;
-                    string testnum = file.Name.Replace(".txt","").Substring(file.Name.Replace(".txt", "").IndexOf("_"));
+                    string testnum = file.Name.Replace(".txt","").Substring(file.Name.Replace(".txt", "").IndexOf("-"));
                     executionResult = CorrectTaskHelper.executeprogram(HWFilePath, filename, CorrectAnswer.AnswerInputFilePath+@"\"+file.Name);
                     if (executionResult.Success)
                     {

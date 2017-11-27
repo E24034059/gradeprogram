@@ -1,0 +1,5 @@
+Please input the length of the rectangle
+Please input the width of the rectangle
+The area of the rectangle is 
+400
+

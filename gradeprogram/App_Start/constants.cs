@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.IO;
-
 namespace gradeprogram.App_Start
 {
     public static class constants
