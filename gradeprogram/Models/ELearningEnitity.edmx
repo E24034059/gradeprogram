@@ -34,9 +34,11 @@
             <PropertyRef Name="StuCouHWDe_ID" />
           </Key>
           <Property Name="Stu_Personal_HW_Exam_ID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="HW_Exam_Number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HW_Exam_Number" Type="varchar" MaxLength="50" />
           <Property Name="HW_Exam_grade" Type="nvarchar(max)" />
           <Property Name="StuCouHWDe_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cActivityID" Type="varchar" MaxLength="50" />
+          <Property Name="cCourseName" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="HW_Exam_File">
           <Key>
@@ -93,12 +95,13 @@
         </EntityType>
         <EntityType Name="StuCouHWDe_prog">
           <Key>
-            <PropertyRef Name="StuCouHWDe_ID" />
+            <PropertyRef Name="StuProgramFN" />
           </Key>
           <Property Name="StuCouHWDe_ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Pass_compilation" Type="varchar(max)" />
           <Property Name="Success_execution" Type="varchar(max)" />
           <Property Name="Compare_situation" Type="varchar(max)" />
+          <Property Name="StuProgramFN" Type="varchar" MaxLength="70" Nullable="false" />
         </EntityType>
         <EntityType Name="StuPro">
           <Key>
@@ -161,25 +164,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_HW_Exam_Take_Course">
-          <End Role="Take_Course" Type="Self.Take_Course" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Take_Course">
-              <PropertyRef Name="Stu_Personal_HW_Exam_ID" />
-            </Principal>
-            <Dependent Role="HW_Exam">
-              <PropertyRef Name="Stu_Personal_HW_Exam_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_StuCouHWDe_HW_Exam">
           <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="0..1" />
+          <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HW_Exam">
               <PropertyRef Name="StuCouHWDe_ID" />
@@ -278,10 +267,6 @@
             <End Role="Class" EntitySet="Class" />
             <End Role="HW_Exam_File" EntitySet="HW_Exam_File" />
           </AssociationSet>
-          <AssociationSet Name="FK_HW_Exam_Take_Course" Association="Self.FK_HW_Exam_Take_Course">
-            <End Role="Take_Course" EntitySet="Take_Course" />
-            <End Role="HW_Exam" EntitySet="HW_Exam" />
-          </AssociationSet>
           <AssociationSet Name="FK_StuCouHWDe_HW_Exam" Association="Self.FK_StuCouHWDe_HW_Exam">
             <End Role="HW_Exam" EntitySet="HW_Exam" />
             <End Role="StuCouHWDe_prog" EntitySet="StuCouHWDe_prog" />
@@ -341,11 +326,13 @@
             <PropertyRef Name="StuCouHWDe_ID" />
           </Key>
           <Property Name="Stu_Personal_HW_Exam_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="HW_Exam_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HW_Exam_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="HW_Exam_grade" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="StuCouHWDe_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Take_Course" Relationship="Self.FK_HW_Exam_Take_Course" FromRole="HW_Exam" ToRole="Take_Course" />
           <NavigationProperty Name="StuCouHWDe_prog" Relationship="Self.FK_StuCouHWDe_HW_Exam" FromRole="HW_Exam" ToRole="StuCouHWDe_prog" />
+          <Property Name="cActivityID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cCourseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="HW_Exam_File">
           <Key>
@@ -390,13 +377,14 @@
         </EntityType>
         <EntityType Name="StuCouHWDe_prog">
           <Key>
-            <PropertyRef Name="StuCouHWDe_ID" />
+            <PropertyRef Name="StuProgramFN" />
           </Key>
           <Property Name="StuCouHWDe_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Pass_compilation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Success_execution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Compare_situation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="HW_Exam" Relationship="Self.FK_StuCouHWDe_HW_Exam" FromRole="StuCouHWDe_prog" ToRole="HW_Exam" />
+          <Property Name="StuProgramFN" Type="String" Nullable="false" MaxLength="70" />
         </EntityType>
         <EntityType Name="StuPro">
           <Key>
@@ -499,7 +487,7 @@
           <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="0..1" />
+          <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HW_Exam">
               <PropertyRef Name="StuCouHWDe_ID" />
@@ -605,6 +593,8 @@
           <EntitySetMapping Name="HW_Exam">
             <EntityTypeMapping TypeName="CorrectStuHWDBModel.HW_Exam">
               <MappingFragment StoreEntitySet="HW_Exam">
+                <ScalarProperty Name="cCourseName" ColumnName="cCourseName" />
+                <ScalarProperty Name="cActivityID" ColumnName="cActivityID" />
                 <ScalarProperty Name="Stu_Personal_HW_Exam_ID" ColumnName="Stu_Personal_HW_Exam_ID" />
                 <ScalarProperty Name="HW_Exam_Number" ColumnName="HW_Exam_Number" />
                 <ScalarProperty Name="HW_Exam_grade" ColumnName="HW_Exam_grade" />
@@ -655,6 +645,7 @@
           <EntitySetMapping Name="StuCouHWDe_prog">
             <EntityTypeMapping TypeName="CorrectStuHWDBModel.StuCouHWDe_prog">
               <MappingFragment StoreEntitySet="StuCouHWDe_prog">
+                <ScalarProperty Name="StuProgramFN" ColumnName="StuProgramFN" />
                 <ScalarProperty Name="StuCouHWDe_ID" ColumnName="StuCouHWDe_ID" />
                 <ScalarProperty Name="Pass_compilation" ColumnName="Pass_compilation" />
                 <ScalarProperty Name="Success_execution" ColumnName="Success_execution" />

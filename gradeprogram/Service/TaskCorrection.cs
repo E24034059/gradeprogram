@@ -65,18 +65,18 @@ namespace gradeprogram.Service
             return result;
         }
 
-        public IResult Delete(string StuCouHWDeID)
+        public IResult Delete(string StuProgramFN)
         {
             IResult result = new Result(false);
 
-            if (!this.IsExists(StuCouHWDeID))
+            if (!this.IsExists(StuProgramFN))
             {
                 result.Message = "找不到資料";
             }
 
             try
             {
-                var instance = this.GetByID(StuCouHWDeID);
+                var instance = this.GetByID(StuProgramFN);
                 this.StuCouHWDerepository.Delete(instance);
                 result.Success = true;
             }
@@ -87,14 +87,14 @@ namespace gradeprogram.Service
             return result;
         }
 
-        public bool IsExists(string StuCouHWDeID)
+        public bool IsExists(string StuProgramFN)
         {
-            return this.StuCouHWDerepository.GetAll().Any(x => x.StuCouHWDe_ID == StuCouHWDeID);
+            return this.StuCouHWDerepository.GetAll().Any(x => x.StuProgramFN == StuProgramFN);
         }
 
-        public StuCouHWDe_prog GetByID(string StuCouHWDeID)
+        public StuCouHWDe_prog GetByID(string StuProgramFN)
         {
-            return this.StuCouHWDerepository.Get(x => x.StuCouHWDe_ID == StuCouHWDeID);
+            return this.StuCouHWDerepository.Get(x => x.StuProgramFN == StuProgramFN);
         }
 
         public IEnumerable<StuCouHWDe_prog> GetAll()
@@ -209,7 +209,7 @@ namespace gradeprogram.Service
 
             return result;
         }
-        public string CorrectTask(string ProgramFilePath, string cQID, string StuCouHWDe_ID,string questionNum)
+        public string CorrectTask(string ProgramFilePath, string cQID, string StuProgramFN, string questionNum)
         {
             try
             {
@@ -217,7 +217,7 @@ namespace gradeprogram.Service
                 List<StuCouHWDe_prog> StuHWDe = new List<StuCouHWDe_prog>();
                 Program_Answer answer;
 
-                if (StuCouHWDe_ID == "all")
+                if (StuProgramFN == "all")
                 {
 
                     HWPathHelper HWFilePath = new HWPathHelper(ProgramFilePath);
@@ -234,8 +234,9 @@ namespace gradeprogram.Service
                         {
                             fileFullname.Add(file.FullName);
                             fileName = Path.GetFileNameWithoutExtension(file.FullName);
-                            StuHW.Add(this.HWrepository.Get(x => x.StuCouHWDe_ID == fileName));
-                            StuHWDe.Add(this.StuCouHWDerepository.Get(x => x.StuCouHWDe_ID == fileName));
+                            StuCouHWDe_prog getdata = this.StuCouHWDerepository.Get(x => x.StuProgramFN == fileName);
+                            StuHW.Add(this.HWrepository.Get(x => x.StuCouHWDe_ID == getdata.StuCouHWDe_ID));
+                            StuHWDe.Add(getdata);
                         }
                     }
                     Parallel.ForEach(fileFullname, (onefile, loopState) =>
@@ -244,8 +245,8 @@ namespace gradeprogram.Service
                     });
                     foreach (var result in FinalResult)
                     {
-                        HW_Exam StuHWNow = StuHW.Find(x => x.StuCouHWDe_ID == result.resultID);
-                        StuCouHWDe_prog StuHWDeNow = StuHWDe.Find(x => x.StuCouHWDe_ID == result.resultID);
+                        StuCouHWDe_prog StuHWDeNow = StuHWDe.Find(x => x.StuProgramFN == result.resultID);
+                        HW_Exam StuHWNow = StuHW.Find(x => x.StuCouHWDe_ID == StuHWDeNow.StuCouHWDe_ID);
                         StuHWNow.HW_Exam_grade = result.score(questionNum);
                         StuHWDeNow.Pass_compilation = result.ComplationErrorMessage;
                         StuHWDeNow.Success_execution = result.ExecutionErrorMessage;
@@ -263,12 +264,12 @@ namespace gradeprogram.Service
                 DirectoryInfo direct = new DirectoryInfo(HWFilePath.HWProgFilePath);
                 string fileName;
                 CorrectTaskReturn FinalResult = new CorrectTaskReturn();
-                foreach (var file in direct.EnumerateFiles(StuCouHWDe_ID + ".cpp", SearchOption.AllDirectories))
+                foreach (var file in direct.EnumerateFiles(StuProgramFN + ".cpp", SearchOption.AllDirectories))
                 {
                     if (file.Name.IndexOf("afterMF") == -1)
                     {
-                        HW_Exam StuHWNow = StuHW.Find(x => x.StuCouHWDe_ID == FinalResult.resultID);
-                        StuCouHWDe_prog StuHWDeNow = StuHWDe.Find(x => x.StuCouHWDe_ID == FinalResult.resultID);
+                        StuCouHWDe_prog StuHWDeNow = StuHWDe.Find(x => x.StuProgramFN == FinalResult.resultID);
+                        HW_Exam StuHWNow = StuHW.Find(x => x.StuCouHWDe_ID == StuHWDeNow.StuCouHWDe_ID);                   
                         fileName = Path.GetFileNameWithoutExtension(file.FullName);
                         FinalResult = StartCorrect(HWFilePath, file.FullName, answer);
                         StuHWNow.HW_Exam_grade = FinalResult.score(questionNum);
@@ -337,5 +338,14 @@ namespace gradeprogram.Service
             return FinalResult;
 
         }
+
+        public void InitStuCouHWDe_prog_record(string StuCouHWDe_ID,string StuProgramFN)
+        {
+            StuCouHWDe_prog NewData = new StuCouHWDe_prog();
+            NewData.StuCouHWDe_ID = StuCouHWDe_ID;
+            NewData.StuProgramFN = StuProgramFN;
+            this.StuCouHWDerepository.Create(NewData);
+        }
+
     }
 }

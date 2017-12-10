@@ -34,11 +34,13 @@
       <PropertyRef Name="StuCouHWDe_ID" />
     </Key>
     <Property Name="Stu_Personal_HW_Exam_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="HW_Exam_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HW_Exam_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="HW_Exam_grade" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="StuCouHWDe_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Take_Course" Relationship="Self.FK_HW_Exam_Take_Course" FromRole="HW_Exam" ToRole="Take_Course" />
     <NavigationProperty Name="StuCouHWDe_prog" Relationship="Self.FK_StuCouHWDe_HW_Exam" FromRole="HW_Exam" ToRole="StuCouHWDe_prog" />
+    <Property Name="cActivityID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cCourseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="HW_Exam_File">
     <Key>
@@ -83,13 +85,14 @@
   </EntityType>
   <EntityType Name="StuCouHWDe_prog">
     <Key>
-      <PropertyRef Name="StuCouHWDe_ID" />
+      <PropertyRef Name="StuProgramFN" />
     </Key>
     <Property Name="StuCouHWDe_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Pass_compilation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Success_execution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Compare_situation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="HW_Exam" Relationship="Self.FK_StuCouHWDe_HW_Exam" FromRole="StuCouHWDe_prog" ToRole="HW_Exam" />
+    <Property Name="StuProgramFN" Type="String" Nullable="false" MaxLength="70" />
   </EntityType>
   <EntityType Name="StuPro">
     <Key>
@@ -192,7 +195,7 @@
     <End Role="HW_Exam" Type="Self.HW_Exam" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="0..1" />
+    <End Role="StuCouHWDe_prog" Type="Self.StuCouHWDe_prog" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HW_Exam">
         <PropertyRef Name="StuCouHWDe_ID" />

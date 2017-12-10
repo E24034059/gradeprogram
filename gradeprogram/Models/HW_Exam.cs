@@ -14,12 +14,21 @@ namespace gradeprogram.Models
     
     public partial class HW_Exam
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HW_Exam()
+        {
+            this.StuCouHWDe_prog = new HashSet<StuCouHWDe_prog>();
+        }
+    
         public string Stu_Personal_HW_Exam_ID { get; set; }
         public string HW_Exam_Number { get; set; }
         public string HW_Exam_grade { get; set; }
         public string StuCouHWDe_ID { get; set; }
+        public string cActivityID { get; set; }
+        public string cCourseName { get; set; }
     
         public virtual Take_Course Take_Course { get; set; }
-        public virtual StuCouHWDe_prog StuCouHWDe_prog { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StuCouHWDe_prog> StuCouHWDe_prog { get; set; }
     }
 }

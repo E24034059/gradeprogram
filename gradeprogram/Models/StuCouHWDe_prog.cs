@@ -18,6 +18,7 @@ namespace gradeprogram.Models
         public string Pass_compilation { get; set; }
         public string Success_execution { get; set; }
         public string Compare_situation { get; set; }
+        public string StuProgramFN { get; set; }
     
         public virtual HW_Exam HW_Exam { get; set; }
     }

@@ -30,6 +30,8 @@
     <EntitySetMapping Name="HW_Exam">
       <EntityTypeMapping TypeName="CorrectStuHWDBModel.HW_Exam">
         <MappingFragment StoreEntitySet="HW_Exam">
+          <ScalarProperty Name="cCourseName" ColumnName="cCourseName" />
+          <ScalarProperty Name="cActivityID" ColumnName="cActivityID" />
           <ScalarProperty Name="Stu_Personal_HW_Exam_ID" ColumnName="Stu_Personal_HW_Exam_ID" />
           <ScalarProperty Name="HW_Exam_Number" ColumnName="HW_Exam_Number" />
           <ScalarProperty Name="HW_Exam_grade" ColumnName="HW_Exam_grade" />
@@ -80,6 +82,7 @@
     <EntitySetMapping Name="StuCouHWDe_prog">
       <EntityTypeMapping TypeName="CorrectStuHWDBModel.StuCouHWDe_prog">
         <MappingFragment StoreEntitySet="StuCouHWDe_prog">
+          <ScalarProperty Name="StuProgramFN" ColumnName="StuProgramFN" />
           <ScalarProperty Name="StuCouHWDe_ID" ColumnName="StuCouHWDe_ID" />
           <ScalarProperty Name="Pass_compilation" ColumnName="Pass_compilation" />
           <ScalarProperty Name="Success_execution" ColumnName="Success_execution" />

@@ -15,7 +15,7 @@ namespace gradeprogram.Service.Interface
 
         IResult Delete(string StuCouHWDeID);
 
-        bool IsExists(string StuCouHWDeID);
+        bool IsExists(string StuProgramFN);
 
         StuCouHWDe_prog GetByID(string StuCouHWDeID);
 
@@ -28,8 +28,8 @@ namespace gradeprogram.Service.Interface
         string GetTypes(int CourseID, string tagName, string selectedValue);
 
         string CorrectTask(int CourseID,string HWNum);
-        string CorrectTask(string ProgramFilePath, string cQID, string StuCouHWDe_ID,string questionNum);
+        string CorrectTask(string ProgramFilePath, string cQID, string StuProgramFN, string questionNum);
         bool IsAnswerExists(int Course_ID,string HWNum);
-
+        void InitStuCouHWDe_prog_record(string StuCouHWDe_ID, string StuProgramFN);
     }
 }
